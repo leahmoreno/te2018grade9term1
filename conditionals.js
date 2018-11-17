@@ -1,23 +1,39 @@
 const READLINE = require("readline-sync");
 
 // **** Problem 1: R-rated ****
-// You cannot see an R-rated movie unless you are at least 18, or you are with
+// You cannot see an R-rated movie unless you are AT LEAST 18, or you are with
 // an adult. Write code that prints whether or not someone can see an
 // R-rated movie.
 console.log("*** Problem 1: R-rated ***");
 let age = READLINE.question("Enter your age: ");
 let withAdult = READLINE.question("Are you with an adult? (yes or no): ");
-
+if (age>=18 || withAdult == "yes"){
+	console.log("Congrats you can see the movie!");
+}
+else{
+	console.log("Sorry,you can't see the movie!");
+}
+if(age < 18 && withAdult == "no"){
+	console.log("SOrry you can't see the movie");
+}
 
 // **** Problem 2: Umbrella ****
 // You should bring an umbrella when you travel, but only if it is raining.
-// However, if it is thunderstorming, you should not bring an umbrella since
+// However, if it is thunderstorming, you should NOT bring an umbrella since
 // that's bad luck. Write code that prints if someone should bring an umbrella
 // with them.
 console.log("*** Problem 2: Umbrella ***");
 let raining = READLINE.question("Is it raining? (yes or no): ");
 let thunderstorming = READLINE.question("Is it thunderstorming? (yes or no): ");
-
+if(raining=="yes" && thunderstorming=="no"){
+	console.log("Yes! Bring your umbrella.");
+}
+if(raining=="no" && thunderstorming=="yes"){
+	console.log("No! Leave your unbrella at home!");
+}
+if(raining=="no" && thunderstorming=="no"){
+	console.log("You don't need your umbrella at all.")
+}
 
 // **** Problem 3: Monkey Trouble ****
 // There are two monkeys: Bubbles and Spankey. You are in trouble if both of
